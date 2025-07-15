@@ -2,12 +2,35 @@ package zairastra.u5w1d2.entities;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import zairastra.u5w1d2.entities.enums.TableStatus;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
 public class AppConfig {
+
+    //aggiungo i tavoli come Beans
+    @Bean(name = "t1")
+    public Table t1() {
+        return new Table(1, 10, TableStatus.AVAILABLE);
+    }
+
+    @Bean(name = "t2")
+    public Table t2() {
+        return new Table(2, 6, TableStatus.AVAILABLE);
+    }
+
+    @Bean(name = "t3")
+    public Table t3() {
+        return new Table(3, 4, TableStatus.OCCUPIED);
+    }
+
+    @Bean(name = "t4")
+    public Table t4() {
+        return new Table(4, 6, TableStatus.AVAILABLE);
+    }
+
     @Bean(name = "toppings_tomato")
     public Topping toppingTomatoBean() {
         return new Topping("Tomato", 0, 0);
