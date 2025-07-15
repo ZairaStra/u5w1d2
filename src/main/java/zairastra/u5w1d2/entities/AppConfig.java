@@ -2,12 +2,17 @@ package zairastra.u5w1d2.entities;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
+import zairastra.u5w1d2.entities.enums.OrderStatus;
 import zairastra.u5w1d2.entities.enums.TableStatus;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class AppConfig {
 
     //aggiungo i tavoli come Beans
@@ -30,6 +35,19 @@ public class AppConfig {
     public Table t4() {
         return new Table(4, 6, TableStatus.AVAILABLE);
     }
+
+    //non posso fare injection del settable qui?
+    @Bean(name = "o1")
+    @Primary
+    public Order o1() {
+        return new Order(1, OrderStatus.READY, 3, LocalTime.of(13, 3), List.of(pizzaSalamiXlBean(), pizzaHawaiianBean(), pizzaMargheritaBean(), toppingHamBean(), toppingCheeseBean(), lemonadeBean(), lemonadeBean(), wineBean()), t1());
+    }
+
+    @Bean(name = "o2")
+    public Order o2() {
+        return new Order(2, OrderStatus.WORK_IN_PROGRESS, 2, LocalTime.of(14, 30), List.of(pizzaMargheritaBean(), pizzaSalamiBean(), toppingPineappleBean(), lemonadeBean(), waterBean()), t2());
+    }
+
 
     @Bean(name = "toppings_tomato")
     public Topping toppingTomatoBean() {

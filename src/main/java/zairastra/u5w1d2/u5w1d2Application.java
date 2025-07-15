@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import zairastra.u5w1d2.entities.Menu;
 
 @SpringBootApplication
-@Slf4j
+@Slf4j//cos'è????
 public class u5w1d2Application {
 
     public static void main(String[] args) {
