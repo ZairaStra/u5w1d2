@@ -1,5 +1,8 @@
 package zairastra.u5w1d2.entities;
 
+
+//crea una classe astratta Item da cui discendono tutti gli elementi nel menu
+
 import lombok.Getter;
 
 @Getter

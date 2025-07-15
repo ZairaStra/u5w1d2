@@ -1,5 +1,7 @@
 package zairastra.u5w1d2.entities;
 
+//Pizza di suo ha nome e una lista di Topping - non si può creare una pizza con ingredienti non compresi nella List<Topping>
+
 import lombok.Getter;
 
 import java.util.List;
@@ -20,6 +22,9 @@ public class Pizza extends Item {
         this.price = setPrice(toppingList, isXl);
     }
 
+    //il metodo per contare le calorie le prende direttamente da ciascun elemento della List<Topping>
+    //e li somma alle calorie di Pizza come oggetto
+    //(valuta pure se è xl)
     public int setCalories(List<Topping> toppingList, boolean isXl) {
         int tot = 1012;
         if (toppingList != null) {
@@ -31,6 +36,9 @@ public class Pizza extends Item {
         else return tot;
     }
 
+    //il metodo per calcolare il prezzo prende il singolo prezzo di ciascun elemento della List<Topping>
+    //e li somma al prezzo di Pizza come oggetto
+    //(valuta pure se è xl)
     public double setPrice(List<Topping> t, boolean isXl) {
         double tot = 4.30;
         if (t != null) {

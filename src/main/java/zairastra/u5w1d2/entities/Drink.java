@@ -3,6 +3,7 @@ package zairastra.u5w1d2.entities;
 import lombok.Getter;
 import lombok.Setter;
 
+//anche i Drink sono solo item con un nome
 @Getter
 @Setter
 public class Drink extends Item {

@@ -7,6 +7,10 @@ import lombok.ToString;
 
 import java.util.List;
 
+//in Menu ho un metodo che stampa una lista di pizze, una di topping e una di drink
+//come diceva Riccardo ieri volendo si poteva fare una lista unica di Item e avrebbe funzionato comunque
+//grazie al polimorfismo - tutti discendono da Item
+//così però la stampa è più ordinata
 @Getter
 @ToString
 @NoArgsConstructor

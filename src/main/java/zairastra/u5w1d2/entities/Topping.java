@@ -3,6 +3,7 @@ package zairastra.u5w1d2.entities;
 import lombok.Getter;
 import lombok.Setter;
 
+//tutti gli ingredienti che posso mettere su una base pizza sono qui - posso solo eventualemnte raddioppiarli o triplicarli
 @Getter
 @Setter
 
